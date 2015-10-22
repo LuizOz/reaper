@@ -45,7 +45,6 @@ class CGroups(object):
             f.write('\t}\n')
             f.write('}\n')
             f.close()
-        self.mysqlctl = True
         syslog.syslog(syslog.LOG_INFO, 'Updated cgconfig MySQL resource controller')
         
 
@@ -79,7 +78,7 @@ class CGroups(object):
             for group in groups:
                 for user in users[group]:
                     f.write('%s\t\tcpuset,memory,cpuacct\t%s\n' % (user, group))
-            f.write('mysql\t\tcpu\tmysql\n'
+            f.write('mysql\t\tcpu\tmysql\n')
         syslog.syslog(syslog.LOG_INFO, 'Updated cgred configuration file')
 
 

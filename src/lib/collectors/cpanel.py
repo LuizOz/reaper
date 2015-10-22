@@ -23,4 +23,4 @@ def collect():
                         resellers[reseller].append(account)
                 except KeyError:
                     print("Account owner not found, skipping (%s)" % account)   
-    return reseller
+    return resellers
